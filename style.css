@@ -77,10 +77,10 @@ h1 {
   left: 0;
   right: 0;
   bottom: 0;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
-  /* display: none; */
+  display: none;
 }
 
 .popup {
@@ -103,4 +103,25 @@ h1 {
 
 .popup button:active {
   transform: scale(0.98);
+}
+
+.popup button {
+  outline: none;
+}
+
+.notification-container {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px 10px 0 0;
+  padding: 15px 20px;
+  position: absolute;
+  bottom: -50px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.notification-container p {
+  margin: 0;
+}
+
+.notification-container.show {
+  transform: translateY(-50px);
 }
