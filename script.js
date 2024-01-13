@@ -16,14 +16,14 @@ const words = [
   "Design",
 ];
 
-const selectedWords = words[Math.floor(Math.random() * words.length)];
+const selectedWord = words[Math.floor(Math.random() * words.length)];
 
 const correctLetters = [];
 const wrongLetters = [];
 
 function displayWords() {
   wordEl.innerHTML = `
-    ${selectedWords
+    ${selectedWord
       .split("")
       .map(
         (letter) => `
@@ -34,6 +34,12 @@ function displayWords() {
       )
       .join("")}
   `;
+
+  const innerWord = wordEl.innerText.replace(/[\n]/g, "");
+  if (innerWord === selectedWord) {
+    finalMessage.innerText = "Congratulations! You won! 😃";
+    popup.style.display = "flex";
+  }
 }
 
 displayWords();
