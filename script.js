@@ -16,7 +16,7 @@ const words = [
   "Design",
 ];
 
-const selectedWord = words[Math.floor(Math.random() * words.length)];
+let selectedWord = words[Math.floor(Math.random() * words.length)];
 
 const correctLetters = [];
 const wrongLetters = [];
@@ -94,6 +94,16 @@ window.addEventListener("keydown", (e) => {
       }
     }
   }
+});
+
+playAgainBtn.addEventListener("click", () => {
+  wrongLetters.splice(0);
+  correctLetters.splice(0);
+
+  selectedWord = words[Math.floor(Math.random() * words.length)];
+  displayWords();
+  updateWrongLettersEl();
+  popup.style.display = "none";
 });
 
 displayWords();
