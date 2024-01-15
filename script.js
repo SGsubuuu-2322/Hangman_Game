@@ -57,6 +57,11 @@ function updateWrongLettersEl() {
       figure.style.display = "none";
     }
   });
+
+  if (wrongLetters.length === figureParts.length) {
+    finalMessage.innerText = "Unfortunately you lost. 😕";
+    popup.style.display = "flex";
+  }
 }
 
 function showNotification() {
